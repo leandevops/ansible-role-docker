@@ -1,0 +1,39 @@
+---
+language: python
+python: '2.7'
+
+services: docker
+
+matrix:
+  include:
+    - env:
+        - distro: centos7
+        - MOLECULE_SCENARIO: default
+        - init: "/usr/lib/systemd/systemd"
+        - opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    # - env:
+    #     - distro: ubuntu1604
+    #     - MOLECULE_SCENARIO: ubuntu1604
+    #     - init: "/lib/systemd/systemd"
+    #     - opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+
+sudo: required
+
+cache:
+  - pip
+
+before_install:
+  - sudo apt-get -qq update
+  - sudo apt-get install -o Dpkg::Options::='--force-confold' --force-yes -y docker-ce
+
+install:
+  - pip install -r requirements.txt
+
+  - .travis/before.sh
+
+script:
+  - .travis/test.sh
+
+branches:
+  only:
+    - master
