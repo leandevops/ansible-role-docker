@@ -1,0 +1,4 @@
+---
+- name: Debug task
+  debug:
+    msg: "Testing role {{ ansible_distribution }}"
