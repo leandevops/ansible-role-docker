@@ -1,7 +1,7 @@
-Role Name
-=========
+# Ansible role: Docker
+[![Build Status](https://travis-ci.org/lestex/ansible-role-docker.svg?branch=master)](https://travis-ci.org/lestex/ansible-role-docker)
 
-A brief description of the role goes here.
+This role installs [Docker](https://www.docker.com/) on linux servers.
 
 Requirements
 ------------
