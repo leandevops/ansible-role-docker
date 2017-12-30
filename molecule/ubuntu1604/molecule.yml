@@ -1,0 +1,33 @@
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: docker
+
+lint:
+  name: yamllint
+
+platforms:
+  - name: docker-ubuntu1604-ansible
+    image: lestex/docker-ubuntu1604-ansible:latest
+
+provisioner:
+  name: ansible
+  playbooks:
+    create: ../default/create.yml
+    destroy: ../default/destroy.yml
+    converge: ../default/playbook.yml
+    prepare: ../default/prepare.yml
+    #  options:
+    #    vvv: 'True'
+  lint:
+    name: ansible-lint
+
+scenario:
+  name: ubuntu1604
+
+verifier:
+  name: testinfra
+  lint:
+    name: flake8
