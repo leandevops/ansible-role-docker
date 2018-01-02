@@ -1,2 +1,9 @@
 ---
-# defaults file for ansible-role-docker
+# Docker engine edition 'ce' or 'ee'
+docker_engine_edition: "ce"
+docker_engine_package: "docker-{{ docker_engine_edition }}"
+
+# Ubuntu/Debian settings
+# Use 'stable' or 'edge'.
+apt_release_channel: stable
+apt_repository: "deb https://download.docker.com/linux/{{ ansible_distribution|lower }} {{ ansible_distribution_release }} {{ apt_release_channel }}"

@@ -1,4 +1,31 @@
 ---
-- name: Debug task
-  debug:
-    msg: "Testing role {{ ansible_distribution }}"
+- name: Remove old versions of Docker if installed.
+  package:
+    name: '{{ item }}'
+    state: absent
+  with_items:
+    - docker
+    - docker-engine
+    - docker.io
+
+- name: Install dependencies for Docker
+  apt:
+    name: "{{ item }}"
+    state: present
+  with_items:
+    - apt-transport-https
+    - ca-certificates
+    - curl
+    - software-properties-common
+
+- name: Add Docker apt key.
+  apt_key:
+    url: https://download.docker.com/linux/ubuntu/gpg
+    id: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+    state: present
+
+- name: Add Docker repository.
+  apt_repository:
+    repo: "{{ apt_repository }}"
+    state: present
+    update_cache: "yes"
