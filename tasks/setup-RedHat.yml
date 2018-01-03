@@ -1,4 +1,18 @@
 ---
-- name: Debug task
-  debug:
-    msg: "Testing role {{ ansible_distribution }}"
+
+- name: Remove old versions of Docker if installed.
+  package:
+    name: '{{ item }}'
+    state: absent
+  with_items:
+    - docker
+    - docker-common
+    - docker-engine
+
+- name: Add Docker repository.
+  get_url:
+    url: "{{ yum_repo_url }}"
+    dest: '/etc/yum.repos.d/docker-{{ docker_engine_edition }}.repo'
+    owner: root
+    group: root
+    mode: 0644
