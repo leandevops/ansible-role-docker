@@ -9,8 +9,8 @@ lint:
   name: yamllint
 
 platforms:
-  - name: docker-ubuntu1604-ansible
-    image: lestex/docker-ubuntu1604-ansible:latest
+  - name: ubuntu1604
+    image: lestex/ubuntu1604-systemd:latest
     privileged: "True"
     volume_mounts:
       - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
