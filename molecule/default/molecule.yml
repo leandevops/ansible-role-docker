@@ -10,7 +10,7 @@ lint:
 
 platforms:
   - name: centos7
-    image: lestex/docker-centos7-ansible:latest
+    image: lestex/centos7-systemd:latest
     privileged: "True"
     volume_mounts:
       - '/sys/fs/cgroup:/sys/fs/cgroup:ro'

@@ -1,4 +1,5 @@
 import os
+import pytest
 
 import testinfra.utils.ansible_runner
 
@@ -6,8 +7,12 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
     os.environ['MOLECULE_INVENTORY_FILE']).get_hosts('all')
 
 
-def test_hosts_file(host):
-    f = host.file('/etc/default/docker')
+@pytest.mark.parametrize('file', [
+    '/etc/docker/',
+    '/lib/systemd/system/docker.service'
+])
+def test_hosts_file(host, file):
+    f = host.file(file)
 
     assert f.exists
     assert f.user == 'root'
