@@ -11,11 +11,14 @@ lint:
 platforms:
   - name: centos7
     image: lestex/docker-centos7-ansible:latest
+    privileged: "True"
+    volume_mounts:
+      - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
 
 provisioner:
   name: ansible
-  #  options:
-  #    vvv: 'True'
+  # options:
+  #   vvv: 'True'
   lint:
     name: ansible-lint
 

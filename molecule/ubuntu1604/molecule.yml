@@ -11,6 +11,9 @@ lint:
 platforms:
   - name: docker-ubuntu1604-ansible
     image: lestex/docker-ubuntu1604-ansible:latest
+    privileged: "True"
+    volume_mounts:
+      - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
 
 provisioner:
   name: ansible
