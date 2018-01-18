@@ -5,7 +5,7 @@ galaxy_info:
   author: Andrey Larin
   description: Installs Docker for linux
   company: ""
-  license: "license (BSD, MIT)""
+  license: "license (BSD, MIT)"
   min_ansible_version: 2.0
   platforms:
     - name: Centos
@@ -15,10 +15,8 @@ galaxy_info:
       versions:
         - xenial
   galaxy_tags:
-    - web
     - system
     - containers
     - docker
     - orchestration
-    - compose
     - server
