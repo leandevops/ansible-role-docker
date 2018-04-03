@@ -254,3 +254,5 @@ __pycache__
 
 ### Vagrant ###
 .vagrant/
+
+.pytest_cache

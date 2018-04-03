@@ -1,6 +1,8 @@
 ---
 dependency:
   name: galaxy
+  # options:
+  #   role-file: requirements.yml
 
 driver:
   name: docker
@@ -12,13 +14,13 @@ platforms:
   - name: centos7
     image: lestex/centos7-systemd:latest
     privileged: "True"
-    volume_mounts:
-      - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+    volumes:
+      - "/sys/fs/cgroup:/sys/fs/cgroup:ro"
 
 provisioner:
   name: ansible
   # options:
-  #   vvv: 'True'
+  #   vvv: True
   lint:
     name: ansible-lint
 
