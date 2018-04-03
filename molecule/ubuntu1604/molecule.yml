@@ -10,8 +10,7 @@ lint:
 
 platforms:
   - name: ubuntu1604
-    # image: lestex/ubuntu1604-systemd:latest
-    image: solita/ubuntu-systemd:latest
+    image: lestex/ubuntu1604-systemd:latest
     command: /sbin/init
     privileged: "True"
     volumes:

@@ -1,12 +1,12 @@
 # Ansible role: Docker
 [![Build Status](https://travis-ci.org/lestex/ansible-role-docker.svg?branch=master)](https://travis-ci.org/lestex/ansible-role-docker)
 
-This role installs [Docker](https://www.docker.com/) on linux servers.
+This role installs [Docker](https://www.docker.com/) on Centos / Ubuntu linux servers.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+None.
 
 Role Variables
 --------------
@@ -21,18 +21,16 @@ A list of other roles hosted on Galaxy should go here, plus any details in regar
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: servers
       roles:
-         - { role: ansible-role-docker, x: 42 }
+         - { role: ansible-role-docker }
 
 License
 -------
 
-BSD
+BSD / MIT
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+This role is created by Andrey Larin.

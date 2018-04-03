@@ -16,3 +16,8 @@
     owner: root
     group: root
     mode: 0644
+
+- name: Configure default docker storage-driver for RedHat.
+  set_fact:
+    docker_daemon_opts: "{{docker_daemon_opts|combine( {'storage-driver': '{{ docker_redhat_storage_driver }}' } )}}"
+  when: "'storage-driver' not in docker_daemon_opts"
