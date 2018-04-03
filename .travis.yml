@@ -8,8 +8,8 @@ matrix:
   include:
     - env:
         - distro: centos7
-        - MOLECULE_SCENARIO: default
-        - init: "/usr/lib/systemd/systemd"
+        - MOLECULE_SCENARIO: default        
+        - init: "/usr/sbin/init"
         - opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
     - env:
         - distro: ubuntu1604
