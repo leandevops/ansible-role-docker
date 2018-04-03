@@ -11,6 +11,18 @@
     name: "{{ docker_engine_package }}"
     state: present
 
+- name: Ensure Docker config dir exists
+  file:
+    path: /etc/docker
+    state: directory
+  when: docker_daemon_opts|length > 0
+
+- name: Configure Docker daemon
+  template:
+    src: daemon.json.j2
+    dest: /etc/docker/daemon.json
+  when: docker_daemon_opts|length > 0
+
 - name: Ensure Docker is started and enabled at boot.
   service:
     name: docker
