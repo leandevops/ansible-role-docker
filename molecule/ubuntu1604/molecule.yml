@@ -10,10 +10,12 @@ lint:
 
 platforms:
   - name: ubuntu1604
-    image: lestex/ubuntu1604-systemd:latest
+    # image: lestex/ubuntu1604-systemd:latest
+    image: solita/ubuntu-systemd:latest
+    command: /sbin/init
     privileged: "True"
-    volume_mounts:
-      - '/sys/fs/cgroup:/sys/fs/cgroup:ro'
+    volumes:
+      - '/sys/fs/cgroup:/sys/fs/cgroup:rw'
 
 provisioner:
   name: ansible

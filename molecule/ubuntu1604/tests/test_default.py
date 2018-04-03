@@ -33,4 +33,4 @@ def test_package(host, name):
 def test_service(host, name):
     service = host.service(name)
     assert service.is_enabled
-#    assert service.is_running
+    assert service.is_running
