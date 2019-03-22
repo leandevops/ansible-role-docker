@@ -1,13 +1,8 @@
 ---
-
 - name: Remove old versions of Docker if installed.
   package:
-    name: '{{ item }}'
+    name: ['docker', 'docker-common', 'docker-engine']
     state: absent
-  with_items:
-    - docker
-    - docker-common
-    - docker-engine
 
 - name: Add Docker repository.
   get_url:
@@ -19,5 +14,5 @@
 
 - name: Configure default docker storage-driver for RedHat.
   set_fact:
-    docker_daemon_opts: "{{docker_daemon_opts|combine( {'storage-driver': '{{ docker_redhat_storage_driver }}' } )}}"
+    docker_daemon_opts: "{{ docker_daemon_opts | combine( {'storage-driver': '{{ docker_redhat_storage_driver }}' } ) }}"
   when: "'storage-driver' not in docker_daemon_opts"

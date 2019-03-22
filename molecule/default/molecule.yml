@@ -13,7 +13,7 @@ lint:
 platforms:
   - name: centos7
     image: lestex/centos7-systemd:latest
-    privileged: "True"
+    privileged: true
     volumes:
       - "/sys/fs/cgroup:/sys/fs/cgroup:rw"
 
