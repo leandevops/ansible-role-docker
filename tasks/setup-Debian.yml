@@ -10,13 +10,8 @@
 
 - name: Install dependencies for Docker
   apt:
-    name: "{{ item }}"
+    name: ['apt-transport-https', 'ca-certificates', 'curl', 'software-properties-common']
     state: present
-  with_items:
-    - apt-transport-https
-    - ca-certificates
-    - curl
-    - software-properties-common
 
 - name: Add Docker apt key.
   apt_key:
