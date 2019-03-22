@@ -1,5 +1,5 @@
 # Ansible role: Docker
-[![Build Status](https://travis-ci.org/lestex/ansible-role-docker.svg?branch=master)](https://travis-ci.org/lestex/ansible-role-docker)
+[![Build Status](https://travis-ci.org/leandevops/ansible-role-docker.svg?branch=master)](https://travis-ci.org/leandevops/ansible-role-docker)
 
 This role installs [Docker](https://www.docker.com/) on Centos / Ubuntu linux servers.
 
@@ -29,4 +29,4 @@ BSD / MIT
 Author Information
 ------------------
 
-This role is created by Andrey Larin.
+This role is created and supported by [leandevops](leandevops.io).
