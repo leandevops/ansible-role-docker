@@ -9,8 +9,8 @@ lint:
   name: yamllint
 
 platforms:
-  - name: ubuntu1604
-    image: leandevopsio/ubuntu1604-systemd:latest
+  - name: ubuntu1804
+    image: leandevopsio/ubuntu1804-systemd:latest
     command: /sbin/init
     privileged: true
     volumes:
@@ -27,7 +27,7 @@ provisioner:
     name: ansible-lint
 
 scenario:
-  name: ubuntu1604
+  name: ubuntu1804
 
 verifier:
   name: testinfra
