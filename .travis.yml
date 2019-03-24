@@ -16,6 +16,11 @@ matrix:
         - MOLECULE_SCENARIO: ubuntu1604
         - init: "/lib/systemd/systemd"
         - opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
+    - env:
+        - distro: ubuntu1804
+        - MOLECULE_SCENARIO: ubuntu1804
+        - init: "/lib/systemd/systemd"
+        - opts: "--privileged --volume=/sys/fs/cgroup:/sys/fs/cgroup:ro"
 
 sudo: required
 
