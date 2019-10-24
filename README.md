@@ -1,4 +1,5 @@
 ## Ansible role: Docker
+![Maintained by Leandevops.io](https://img.shields.io/badge/maintained%20by-leandevops-green.svg)
 [![Build Status](https://travis-ci.org/leandevops/ansible-role-docker.svg?branch=master)](https://travis-ci.org/leandevops/ansible-role-docker)
 
 This role installs [Docker](https://www.docker.com/) on linux servers (Centos 7/ Ubuntu 16.04/ Ubuntu 18.04).
